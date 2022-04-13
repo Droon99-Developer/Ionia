@@ -18,7 +18,7 @@
 	},
 	"monster": [
 		{
-			"name": "Mordenkainen Test",
+			"name": "Mordenkainen",
 			"isNpc": true,
 			"source": "DroonsHomebrewCreations",
 			"page": 39,
