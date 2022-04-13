@@ -1,5 +1,4 @@
 {
-	"siteVersion": "1.152.4",
 	"_meta": {
 		"sources": [
 			{
@@ -7,6 +6,7 @@
 				"abbreviation": "DHC",
 				"full": "Droon99's Homebrew Creations",
 				"url": "",
+				"version": "0.1",
 				"authors": [
 					"Droon99"
 				],
@@ -115,18 +115,18 @@
 						"0": {
 							"spells": [
 								"{@spell fire bolt}",
-								"{@spell light}",
-								"{@spell mage hand}",
+								"{@spell mending}",
+								"{@spell message}",
 								"{@spell prestidigitation}",
 								"{@spell shocking grasp}"
 							]
 						},
 						"1": {
 							"spells": [
-								"{@spell detect magic}",
 								"{@spell mage armor}",
 								"{@spell magic missile}",
-								"{@spell Mordenkainen's manifested manservant|DroonsHomebrewCreations}"
+								"{@spell Mordenkainen's manifested manservant|DroonsHomebrewCreations}",
+								"{@spell thunderwave}"
 							],
 							"slots": 4
 						},
@@ -142,15 +142,14 @@
 							"spells": [
 								"{@spell counterspell}",
 								"{@spell fireball}",
-								"{@spell fly}",
-								"{@spell Mordenkainen's monumental momentum|DroonsHomebrewCreations}"
+								"{@spell Melf's minute meteors|XGE}"
 							],
 							"slots": 3
 						},
 						"4": {
 							"spells": [
+								"{@spell dimension door}",
 								"{@spell greater invisibility}",
-								"{@spell Mordenkainen's faithful hound}",
 								"{@spell polymorph}"
 							],
 							"slots": 3
@@ -166,14 +165,14 @@
 						"6": {
 							"spells": [
 								"{@spell chain lightning}",
-								"{@spell true seeing}"
+								"{@spell Tenser's transformation|XGE}"
 							],
 							"slots": 2
 						},
 						"7": {
 							"spells": [
-								"{@spell Mordenkainen's magnificent mansion}",
-								"{@spell Mordenkainen's sword}"
+								"{@spell Mordenkainen's sword}",
+								"{@spell plane shift}"
 							],
 							"slots": 2
 						},
@@ -191,7 +190,68 @@
 							"slots": 1
 						}
 					},
+					"daily": {
+						"1e": [
+							"{@spell fly}",
+							"{@spell Mordenkainen's monumental momentum|DroonsHomebrewCreations}"
+						]
+					},
 					"ability": "int",
+					"type": "spellcasting"
+				},
+				{
+					"name": "Staff of the Magi",
+					"headerEntries": [
+						"Mordenkainen's Staff of the Magi has 50 charges and regains {@dice 4d6+2} expended charges daily at dawn. As an action, Mordenkainen can expend some of its charges to cast the following spells:"
+					],
+					"will": [
+						"{@spell arcane lock}",
+						"{@spell detect magic}",
+						"{@spell enlarge/reduce}",
+						"{@spell light}",
+						"{@spell mage hand}",
+						"{@spell protection from evil and good}"
+					],
+					"spells": {
+						"2": {
+							"spells": [
+								"{@spell invisibility} (2 charges)",
+								"{@spell knock} (2 charges)",
+								"{@spell Mordenkainen's maximum mindfulness|DroonsHomebrewCreations} (2 charges)",
+								"{@spell web} (2 charges)"
+							],
+							"slots": 0
+						},
+						"3": {
+							"spells": [
+								"{@spell dispel magic} (3 charges)",
+								"{@spell fireball} (7th-level version, 7 charges)",
+								"{@spell lightning bolt} (7th-level version, 7 charges)"
+							],
+							"slots": 0
+						},
+						"4": {
+							"spells": [
+								"{@spell Mordenkainen's faithful hound} (4 charges)",
+								"{@spell wall of fire} (4 charges)"
+							],
+							"slots": 0
+						},
+						"5": {
+							"spells": [
+								"{@spell Mordenkainen's malevolent missile|DroonsHomebrewCreations} (5 charges)",
+								"{@spell telekinesis} (5 charges)"
+							],
+							"slots": 0
+						},
+						"7": {
+							"spells": [
+								"{@spell Mordenkainen's magnificent mansion} (7 charges)",
+								"{@spell plane shift} (7 charges)"
+							],
+							"slots": 0
+						}
+					},
 					"type": "spellcasting"
 				}
 			],
@@ -199,15 +259,15 @@
 				{
 					"name": "Magic Resistance",
 					"entries": [
-						"Mordenkainen has advantage on saving throws against spells and other magical effects from his {@item staff of the magi}."
+						"Mordenkainen has advantage on saving throws against spells and other magical effects from his {@item Mordenkainen's staff of the magi|DroonsHomebrewCreations}. "
 					]
 				}
 			],
 			"action": [
 				{
-					"name": "Dagger",
+					"name": "Mordenkainen's Staff of the Magi",
 					"entries": [
-						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
 					]
 				}
 			],
@@ -223,16 +283,548 @@
 				"OTH"
 			],
 			"damageTags": [
-				"P"
+				"B"
 			],
 			"spellcastingTags": [
 				"CW"
 			],
 			"miscTags": [
-				"MW",
-				"RW",
-				"THW"
+				"MW"
 			]
+		}
+	],
+	"spell": [
+		{
+			"name": "Fortuna's Fire of Damnation",
+			"source": "DroonsHomebrewCreations",
+			"level": 2,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a holy symbol"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 10,
+						"upTo": true
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You choose a creature you can see within range, presenting your holy symbol and wreathing the creature in flame. Until the spell ends, you deal an extra {@damage 1d8} fire damage to the target whenever you hit it with an attack, If your target is a fiend or undead, this extra damage is radiant instead of fire damage. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature."
+			],
+			"damageInflict": [
+				"fire",
+				"radiant"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"fluff": {
+				"entries": [
+					"Created by Cameron William Henrik Fortuna the VIII while in Barovia."
+				]
+			}
+		},
+		{
+			"name": "Devil's Bane",
+			"source": "DroonsHomebrewCreations",
+			"level": 3,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a holy symbol"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You choose a creature you can see within range, presenting your holy symbol and summoning a bolt of radiant energy from within it. Make a ranged spell attack roll against the creature. If the creature is a fiend, you make the attack roll at advantage. On a hit, the target takes {@damage 6d8} radiant damage and is {@condition blinded} until the start of your next turn."
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell at 4th level or higher, add an additional {@damage 1d8} damage per spell level."
+					]
+				}
+			],
+			"damageInflict": [
+				"radiant"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"spellAttack": [
+				"R"
+			],
+			"miscTags": [
+				"SGT"
+			],
+			"areaTags": [
+				"ST"
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"fluff": {
+				"entries": [
+					"Created by Cameron William Henrik Fortuna the VIII while in Barovia."
+				]
+			}
+		},
+		{
+			"name": "Fortuna's Fortified Sanctum",
+			"source": "DroonsHomebrewCreations",
+			"level": 5,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a single gold piece, a wooden rook from a chess set, and a candle"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 12
+					}
+				}
+			],
+			"entries": [
+				"You conjure an extradimensional dwelling that lasts for the duration. The entrance appears in a space of your choosing as a mostly translucent wooden castle door. Those you designate may enter the door, though the dwelling only has room for 8-10 people to sleep comfortably. The door if closed is {@condition invisible} to those who do not have permission to enter. ",
+				"Within the extradimensional space is a white stone tower in the shape of a rook. It has 10 floors, with an elevator in the center of each floor that can ascend and descend as willed to by any creatures allowed access to the Sanctum. The floors are as follows:",
+				"Ground Floor: Entrance, Coat Room, Weapon Racks",
+				"First Floor: Kitchen and Dining Room",
+				"Second Floor: Library and Study",
+				"Third through Eighth Floors: Bedrooms/All Purpose Rooms",
+				"Ninth Floor: Cameron's Bedroom/Study.",
+				"At the time of casting, you can specify the Decorations for the bedrooms, or if you wish the other purposes the room should instead be equipt for. The furnishings of the tower generally resemble those of Polten, though can be customized at the time of casting. ",
+				"The kitchen is stocked as you wish, though no servants are summoned with the Sanctum so all cooking must be done by yourself and your companions.",
+				"The Library contains only books you can remember, though it does contain many writing desks quite a bit of paper and ink, as well as binding materials. Books created within the Sanctum by materials within the Sanctum continue to exist on subsequent summonings.",
+				"Objects created by the spell cannot leave the Sanctum. Any object created from materials from within the Sanctum cannot leave the Sanctum. Food created by the Sanctum is filling but cannot leave the Sanctum.",
+				"When the spell ends, any creatures or objects not native to the Sanctum are left on open spaces near the entrance to the Sanctum. ",
+				"You can only have one Sanctum at a time. Casting this spell again dispels the previous Sanctum. Casting this spell from within the Sanctum increases the duration by 6 hours."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"fluff": {
+				"entries": [
+					"Set the gold piece down, place the rook upon it, drip the wax in a circle around the gold piece",
+					"Created by Cameron William Henrik Fortuna VIII while in Barovia and Avernus."
+				]
+			}
+		},
+		{
+			"name": "Mordenkainen's Manifested Manservant",
+			"source": "DroonsHomebrewCreations",
+			"page": "M",
+			"level": 1,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a small vial of blood, and a piece of chain"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"meta": {
+				"ritual": true
+			},
+			"entries": [
+				"This spell summons a large demon, and binds it to your will. Due to the nature of binding a chaotic creature to ones will, the connection is weak and will break if the demon is commanded to do all but the most menial of tasks. The demon has an AC of 14, 5 hp, and a Strength of 15. If it is attacked, or commanded to attack, it breaks from the binds of the spell, and chooses to either return to its plane or becomes a hostile Demon under the DMs control.",
+				"Once on each of your turns as a bonus action, you can mentally command the demon to move up to 15 feet and interact with an object. The demon can perform simple tasks that a human servant could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring wine. Once you give the command, the demon performs the task to the best of its ability until it completes the task, then waits for your next command."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Mordenkainen's Monumental Momentum",
+			"source": "DroonsHomebrewCreations",
+			"page": "M",
+			"level": 3,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"This spell allows you extreme speed and agility for the duration. Until the spell ends, your speed is tripled, and you have the following benefits:",
+				"Evasion. If you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+				"When the spell ends, the target can't move or take actions until after its next turn, as a wave of lethargy sweeps over it."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Mordenkainen's Maximum Mindfulness",
+			"source": "DroonsHomebrewCreations",
+			"page": "M",
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "self"
+				}
+			},
+			"components": {
+				"v": true,
+				"m": "a small steel mousetrap"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "hour",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You use your magic to enhance your awareness and steel your mind. Choose Perception, Insight, or Investigation, and Wisdom or Intelligence. For the duration you have advantage on ability checks of the chosen type and advantage on saving throws for chosen ability. "
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Mordenkainen's Malevolent Missile",
+			"source": "DroonsHomebrewCreations",
+			"page": "M",
+			"level": 5,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create a glowing dart of magical force. The dart hits a creature of your choice that you can see within range. The dart deals {@damage 8d4} force damage to its target with a burst of energy. The target and each creature within 10 feet of it must succeed on a Dexterity saving throw or take {@damage 4d4} force damage, or half as much on a success."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		},
+		{
+			"name": "Mordenkainen's Majestic Mistico",
+			"source": "DroonsHomebrewCreations",
+			"page": "M",
+			"level": 8,
+			"school": "C",
+			"time": [
+				{
+					"number": 10,
+					"unit": "minute"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 500
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a ship in a bottle made of spectacular materials worth at least 50 gold pieces"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "day",
+						"amount": 7
+					}
+				}
+			],
+			"entries": [
+				"You conjure a magical ship within range that lasts for the duration. The ship is small but fast, with the statistics of a sailing ship that can move at double its normal speed. The ship has 50 spectral deckhands that crew the ship at half speed, but if someone proficient in Vehicles(Water) or Navigator's tools is assisting the ship moves at its normal pace. The ship also contains an extra-dimensional space of up to 25 rooms. You can create any floor plan you like, but the space can't exceed 25 cubes, each cube being 10 feet on each side. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine course banquet for up to 50 people. The spectral crew unneeded for running the ship attend all who enter. You decide the visual appearance of the spectral crew and their attire. They are completely obedient to your orders. Each crew member can perform any task a normal human crew member could perform. Thus the crew can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. Furnishings and other objects created by this spell dissipate into smoke if removed from the ship. ",
+				"If the spell ends, all creatures or objects left on the ship or in the extra-dimensional space are expelled into open spaces around where the ship dissipated. If you cast the spell while touching the ship, the duration is reset to 7 days. "
+			],
+			"entriesHigherLevel": [
+				{
+					"name": "At Higher Levels",
+					"entries": [
+						"When cast at 9th level, this spell instead creates an airship. The airship acts as a sailing ship that flies at a constant 10 mph. It is magically propelled, and cannot move faster or slower regardless of damage taken or wind speed and direction. The airship has a speed of 0 unless someone with Navigator's tools helps the crew for an hour each day. "
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			}
+		}
+	],
+	"item": [
+		{
+			"name": "Mordenkainen's Staff of the Magi",
+			"source": "Droon99's Homebrew Creations",
+			"page": "M",
+			"tier": "major",
+			"rarity": "legendary",
+			"reqAttune": "by a sorcerer, warlock, or wizard",
+			"reqAttuneTags": [
+				{
+					"class": "sorcerer"
+				},
+				{
+					"class": "warlock"
+				},
+				{
+					"class": "wizard"
+				}
+			],
+			"weight": 4,
+			"weaponCategory": "simple",
+			"property": [
+				"V"
+			],
+			"dmg1": "1d6",
+			"dmgType": "B",
+			"dmg2": "1d8",
+			"bonusWeapon": "+2",
+			"bonusSpellAttack": "+2",
+			"recharge": "dawn",
+			"charges": 50,
+			"staff": true,
+			"entries": [
+				"This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While you hold it, you gain a +2 bonus to spell attack rolls.",
+				"The staff has 50 charges for the following properties. It regains {@dice 4d6 + 2} expended charges daily at dawn. If you expend the last charge, roll a {@dice d20}. On a 20, the staff regains {@dice 1d12 + 1} charges.",
+				{
+					"name": "Spell Absorption",
+					"type": "entries",
+					"entries": [
+						"While holding the staff, you have advantage on saving throws against spells. In addition, you can use your reaction when another creature casts a spell that targets only you. If you do, the staff absorbs the magic of the spell, canceling its effect and gaining a number of charges equal to the absorbed spell's level. However, if doing so brings the staff's total number of charges above 50, the staff explodes as if you activated its retributive strike (see below)."
+					]
+				},
+				{
+					"name": "Spells",
+					"type": "entries",
+					"entries": [
+						"While holding the staff, you can use an action to expend some of its charges to cast one of the following spells from it, using your spell save DC and spellcasting ability: {@spell Mordenkainen's magnificent mansion} (7 charges), {@spell dispel magic} (3 charges), {@spell fireball} (7th-level version, 7 charges), {@spell Mordenkainen's maximum mindfullness} (2 charges), {@spell Mordenkainen's faithful hound} (4 charges), {@spell invisibility} (2 charges), {@spell knock} (2 charges), {@spell lightning bolt} (7th-level version, 7 charges), {@spell passwall} (5 charges), {@spell plane shift} (7 charges), {@spell telekinesis} (5 charges), {@spell wall of fire} (4 charges), or {@spell web} (2 charges).",
+						"You can also use an action to cast one of the following spells from the staff without using any charges: {@spell arcane lock}, {@spell detect magic}, {@spell enlarge/reduce}, {@spell light}, {@spell mage hand}, or {@spell protection from evil and good}."
+					]
+				},
+				{
+					"name": "Retributive Strike",
+					"type": "entries",
+					"entries": [
+						"You can use an action to break the staff over your knee or against a solid surface, performing a retributive strike. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it.",
+						"You have a {@chance 50} chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 × the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point of origin, as shown in the following table. On a successful save, a creature takes half as much damage."
+					]
+				},
+				{
+					"type": "table",
+					"colLabels": [
+						"Distance from Origin",
+						"Damage"
+					],
+					"colStyles": [
+						"col-3",
+						"col-9"
+					],
+					"rows": [
+						[
+							"10 ft. away or closer",
+							"8 × the number of charges in the staff"
+						],
+						[
+							"11 to 20 ft. away",
+							"6 × the number of charges in the staff"
+						],
+						[
+							"21 to 30 ft. away",
+							"4 × the number of charges in the staff"
+						]
+					]
+				}
+			],
+			"attachedSpells": [
+				"conjure elemental",
+				"dispel magic",
+				"fireball",
+				"flaming sphere",
+				"ice storm",
+				"invisibility",
+				"knock",
+				"lightning bolt",
+				"passwall",
+				"plane shift",
+				"telekinesis",
+				"wall of fire",
+				"web",
+				"arcane lock",
+				"detect magic",
+				"enlarge/reduce",
+				"light",
+				"mage hand",
+				"protection from evil and good"
+			],
+			"lootTables": [
+				"Magic Item Table I"
+			],
+			"hasFluffImages": true
 		}
 	]
 }
