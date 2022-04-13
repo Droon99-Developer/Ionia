@@ -1,0 +1,238 @@
+{
+	"siteVersion": "1.152.4",
+	"_meta": {
+		"sources": [
+			{
+				"json": "DroonsHomebrewCreations",
+				"abbreviation": "DHC",
+				"full": "Droon99's Homebrew Creations",
+				"url": "",
+				"authors": [
+					"Droon99"
+				],
+				"convertedBy": []
+			}
+		],
+		"dateAdded": 1649876528,
+		"dateLastModified": 1649876528
+	},
+	"monster": [
+		{
+			"name": "Mordenkainen Test",
+			"isNpc": true,
+			"source": "DroonsHomebrewCreations",
+			"page": 39,
+			"level": 20,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					{
+						"tag": "wizard",
+						"prefix": "human"
+					}
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				12,
+				{
+					"ac": 15,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"hp": {
+				"formula": "20d8 + 20",
+				"average": 110
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 60,
+					"condition": "when using Fly"
+				},
+				"canHover": false
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 12,
+			"int": 20,
+			"wis": 16,
+			"cha": 16,
+			"save": {
+				"int": "+11",
+				"wis": "+9"
+			},
+			"skill": {
+				"arcana": "+17",
+				"history": "+17",
+				"deception": "+9",
+				"perception": "+9",
+				"insight": "+9"
+			},
+			"passive": 19,
+			"immune": [
+				{
+					"immune": [
+						"psychic"
+					],
+					"note": "(from Mind Blank)"
+				}
+			],
+			"conditionImmune": [
+				{
+					"conditionImmune": [
+						"charmed"
+					],
+					"note": "(from Mind Blank)"
+				}
+			],
+			"languages": [
+				"Common,",
+				"Celestial",
+				"Modron",
+				"Abyssal",
+				"Oerthian",
+				"Draconic"
+			],
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Mordenkainen is a 20th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 19}, {@hit 13} to hit with spell attacks). He can cast {@spell shield} and {@spell invisibility} at will and has the following wizard spells prepared:"
+					],
+					"will": [
+						"{@spell Mordenkainen's maximum mindfulness|DroonsHomebrewCreations}",
+						"{@spell shield}"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell fire bolt}",
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell prestidigitation}",
+								"{@spell shocking grasp}"
+							]
+						},
+						"1": {
+							"spells": [
+								"{@spell detect magic}",
+								"{@spell mage armor}",
+								"{@spell magic missile}",
+								"{@spell Mordenkainen's manifested manservant|DroonsHomebrewCreations}"
+							],
+							"slots": 4
+						},
+						"2": {
+							"spells": [
+								"{@spell misty step}",
+								"{@spell scorching ray}",
+								"{@spell vortex warp|SCC}"
+							],
+							"slots": 3
+						},
+						"3": {
+							"spells": [
+								"{@spell counterspell}",
+								"{@spell fireball}",
+								"{@spell fly}",
+								"{@spell Mordenkainen's monumental momentum|DroonsHomebrewCreations}"
+							],
+							"slots": 3
+						},
+						"4": {
+							"spells": [
+								"{@spell greater invisibility}",
+								"{@spell Mordenkainen's faithful hound}",
+								"{@spell polymorph}"
+							],
+							"slots": 3
+						},
+						"5": {
+							"spells": [
+								"{@spell cone of cold}",
+								"{@spell Mordenkainen's malevolent missile|DroonsHomebrewCreations}",
+								"{@spell synaptic static|XGE}"
+							],
+							"slots": 3
+						},
+						"6": {
+							"spells": [
+								"{@spell chain lightning}",
+								"{@spell true seeing}"
+							],
+							"slots": 2
+						},
+						"7": {
+							"spells": [
+								"{@spell Mordenkainen's magnificent mansion}",
+								"{@spell Mordenkainen's sword}"
+							],
+							"slots": 2
+						},
+						"8": {
+							"spells": [
+								"{@spell mind blank}",
+								"{@spell Mordenkainen's majestic mistico|DroonsHomebrewCreations}"
+							],
+							"slots": 1
+						},
+						"9": {
+							"spells": [
+								"{@spell prismatic wall}"
+							],
+							"slots": 1
+						}
+					},
+					"ability": "int",
+					"type": "spellcasting"
+				}
+			],
+			"trait": [
+				{
+					"name": "Magic Resistance",
+					"entries": [
+						"Mordenkainen has advantage on saving throws against spells and other magical effects from his {@item staff of the magi}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 6} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+					]
+				}
+			],
+			"tokenUrl": "https://5e.tools/img/CoS/The Mad Mage of Mount Baratok.png",
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"CE",
+				"DR",
+				"OTH"
+			],
+			"damageTags": [
+				"P"
+			],
+			"spellcastingTags": [
+				"CW"
+			],
+			"miscTags": [
+				"MW",
+				"RW",
+				"THW"
+			]
+		}
+	]
+}
